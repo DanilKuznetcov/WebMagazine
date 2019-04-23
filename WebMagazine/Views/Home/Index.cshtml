@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Товары магазина</title>
+</head>
+<body>
+    <h3>Товары магазина</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Название модели</td>
+                <td>Производитель</td>
+                <td>Цена (руб)</td>
+                <td><a href="#">&nbsp;</a></td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var phone in ViewBag.Phones)
+                {
+                    <tr>
+                        <td>@phone.Name</td>
+                        <td>@phone.Producer</td>
+                        <td>@phone.Price</td>
+                        <td><a href="#">Купить</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
