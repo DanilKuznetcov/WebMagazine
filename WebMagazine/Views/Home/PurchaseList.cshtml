@@ -1,38 +1,27 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h3>Список покупателей</h3>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Список покупателей</title>
-</head>
-<body>
-    <h3>Список покупателей</h3>
-
-    <table>
-        <thead>
+<table>
+    <thead>
+        <tr>
+            <td>Ф.И.О.</td>
+            <td>Email</td>
+            <td>Address</td>
+            <td>Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Purchases in ViewBag.Purchases)
+        {
             <tr>
-                <td>Ф.И.О.</td>
-                <td>Email</td>
-                <td>Address</td>
-                <td>Date</td>
+                <td>@Purchases.FIO</td>
+                <td>@Purchases.Email</td>
+                <td>@Purchases.Address</td>
+                <td>@Purchases.Date</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var Purchases in ViewBag.Purchases)
-            {
-                <tr>
-                    <td>@Purchases.FIO</td>
-                    <td>@Purchases.Email</td>
-                    <td>@Purchases.Address</td>
-                    <td>@Purchases.Date</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
-</html>
+        }
+    </tbody>
+</table>

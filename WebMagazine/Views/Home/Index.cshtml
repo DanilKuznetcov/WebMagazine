@@ -1,40 +1,31 @@
-﻿
-@{
-    Layout = null;
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h3>Товары магазина</h3>
 
-<html>
-<head>
-    <title>Товары магазина</title>
-</head>
-<body>
-    <h3>Товары магазина</h3>
-
-    <table>
-        <thead>
-            <tr>
-                <td>Название модели</td>
-                <td>Производитель</td>
-                <td>Цена (руб)</td>
-                <td>&nbsp;</td>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                foreach (var phone in ViewBag.Phones)
-                {
-                    <tr>
-                        <td>@phone.Name</td>
-                        <td>@phone.Producer</td>
-                        <td>@phone.Price</td>
-                        <td><a href="/Home/Buy/@phone.PhoneId">Купить</a></td>
-                    </tr>
-                }
+<table>
+    <thead>
+        <tr>
+            <td>Название модели</td>
+            <td>Производитель</td>
+            <td>Цена (руб)</td>
+            <td>&nbsp;</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var phone in ViewBag.Phones)
+            {
+                <tr>
+                    <td>@phone.Name</td>
+                    <td>@phone.Producer</td>
+                    <td>@phone.Price</td>
+                    <td><a href="/Home/Buy/@phone.PhoneId">Купить</a></td>
+                </tr>
             }
-        </tbody>
-    </table>
-    <h3><a href="/Home/PurchaseList">Список покупателей</a></h3>
-</body>
-</html>
+        }
+    </tbody>
+</table>
+<h3><a href="/Home/PurchaseList">Список покупателей</a></h3>
+
