@@ -8,11 +8,6 @@ namespace WebMagazine.Models
 {
     public class PhoneContext : DbContext
     {
-        public PhoneContext() : base("PhoneContext")
-        {
-
-        }
-
         public DbSet<Phone> Phones { get; set; }
 
         public DbSet<Purchase> Purchases { get; set; }

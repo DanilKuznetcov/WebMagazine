@@ -20,5 +20,27 @@ namespace WebMagazine.Controllers
 
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult Buy(int Id)
+        {
+            ViewBag.Id = Id;
+
+            return View();
+        }
+
+        [HttpPost]
+        public String Buy(Purchase purchase)
+        {
+            purchase.Date = DateTime.Now;
+
+            PhoneContext.Purchases.Add(purchase);
+
+            PhoneContext.SaveChanges();
+
+            return "С вами свяжутся!";
+        }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace WebMagazine.Models
 {
-    public class DBInitializer : DropCreateDatabaseAlways<PhoneContext>
+    public class DBInitializer : DropCreateDatabaseIfModelChanges<PhoneContext>
     {
         protected override void Seed(PhoneContext context)
         {
