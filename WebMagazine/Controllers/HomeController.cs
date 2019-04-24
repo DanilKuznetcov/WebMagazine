@@ -14,13 +14,21 @@ namespace WebMagazine.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<Phone> phones = PhoneContext.Phones;
+            IEnumerable<Phone> Phones = PhoneContext.Phones;
 
-            ViewBag.Phones = phones;
+            ViewBag.Phones = Phones;
 
             return View();
         }
 
+        public ActionResult PurchaseList()
+        {
+            IEnumerable<Purchase> Purchases = PhoneContext.Purchases;
+
+            ViewBag.Purchases = Purchases;
+
+            return View();
+        }
 
         [HttpGet]
         public ActionResult Buy(int Id)

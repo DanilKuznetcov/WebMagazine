@@ -12,7 +12,7 @@ namespace WebMagazine.Models
         {
             context.Phones.Add(new Phone() { Name = "Power Ice", Price = "7990", Producer = "HightScreen" });
 
-            context.Phones.Add(new Phone() { Name = "Redmi 4X", Price = "1110", Producer = "Xiaomi" });
+            context.Phones.Add(new Phone() { Name = "Redmi 4X", Price = "11110", Producer = "Xiaomi" });
 
             context.Phones.Add(new Phone() { Name = "StupidPhone", Price = "3480", Producer = "Redmi" });
 
