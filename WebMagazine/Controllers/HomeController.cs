@@ -39,7 +39,7 @@ namespace WebMagazine.Controllers
         }
 
         [HttpPost]
-        public String Buy(Purchase purchase)
+        public ActionResult Buy(Purchase purchase)
         {
             purchase.Date = DateTime.Now;
 
@@ -47,7 +47,7 @@ namespace WebMagazine.Controllers
 
             PhoneContext.SaveChanges();
 
-            return "С вами свяжутся!";
+            return RedirectToAction("Index");
         }
 
     }

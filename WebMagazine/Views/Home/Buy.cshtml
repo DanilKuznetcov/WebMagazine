@@ -1,29 +1,40 @@
-﻿
+﻿@model WebMagazine.Models.Purchase
+
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
 }
 
 <h3>Оформление покупки</h3>
 <br />
-<form method="post">
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 
     <input type="hidden" name="PhoneId" value="@ViewBag.Id" />
 
     <table>
         <tr>
-            <td>Ф.И.О.</td>
-            <td><input type="text" name="FIO" /></td>
+            Ф.И.О.
+            @Html.EditorFor(model => model.FIO, new { htmlAttributes = new { @class = "form-control" } })
         </tr>
+        @Html.ValidationMessageFor(model => model.FIO, "", new { @class = "text-danger" })
         <tr>
-            <td>Email</td>
-            <td><input type="text" name="Email" /></td>
+            Email
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
         </tr>
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         <tr>
-            <td>Адрес</td>
-            <td><input type="text" name="Address" /></td>
+            Адрес
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
         </tr>
+        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
         <tr>
             <td colspan="2"><input type="submit" value="Оформить покупку" /></td>
         </tr>
     </table>
-</form>
+}
+
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
